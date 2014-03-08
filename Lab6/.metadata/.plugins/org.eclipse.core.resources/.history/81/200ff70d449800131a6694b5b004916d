@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+
+/**
+ * @author Kevin
+ *
+ */
+import java.util.Scanner;
+
+public class Factorials {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int sum = 1;
+		int integer;
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please enter a non-negative integer");
+		integer = scan.nextInt();
+		
+		while (integer < 0)
+		{
+			System.out.println("Please enter a non-negative integer");
+			integer = scan.nextInt();
+		}
+		
+		while (integer > 0)
+		{
+			sum = sum = integer; sum++;
+			integer = integer * sum;
+			
+		}
+		
+		System.out.println("The result is " + integer);
+
+	}
+
+}

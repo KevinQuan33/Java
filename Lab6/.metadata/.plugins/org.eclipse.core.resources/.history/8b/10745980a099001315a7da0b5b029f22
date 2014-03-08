@@ -1,0 +1,95 @@
+//*********************************************************** 
+// VoteCounterPanel.java 
+// 
+// Panel for the GUI that tallies votes for two candidates, 
+// Joe and Sam. 
+//*********************************************************** 
+
+import java.awt.*; 
+import java.awt.event.*; 
+import javax.swing. *; 
+
+public class VoteCounterPanel extends JPanel 
+{ 
+	private int votesForJoe; 
+	private JButton joe; 
+	private JLabel labelJoe;
+	private JLabel labelWinner;
+	private int votesForSam; 
+	private JButton sam; 
+	private JLabel labelSam;
+	private String Joe;
+	private String Sam;
+//------------------------------------------------- 
+// Constructor: Sets up the GUI. 
+//------------------------------------------------- 
+
+	public VoteCounterPanel() 
+	{ 
+		votesForJoe = 0; 
+		String Joe = "Joe";
+		joe = new JButton("Vote for Joe"); 
+		joe.addActionListener(new JoeButtonListener()); 
+		labelJoe = new JLabel("Votes for Joe: " + votesForJoe); 
+		labelWinner = new JLabel("Winning" + Joe);
+		
+		add(joe); 
+		add(labelJoe); 
+		add(labelWinner);
+		
+		setPreferredSize(new Dimension(300, 40)); 
+		setBackground(Color.cyan);
+		
+		votesForSam = 0; 
+		String Sam = "Sam";
+		sam = new JButton("Vote for Sam"); 
+		sam.addActionListener(new SamButtonListener()); 
+		labelSam = new JLabel("Votes for Sam: " + votesForSam);
+		labelWinner = new JLabel("Winning" + Sam);
+		
+		add(sam); 
+		add(labelSam);
+		
+		setPreferredSize(new Dimension(700, 40)); 
+		setBackground(Color.cyan); 
+	} 
+	//************************************************** 
+	// Represents a listener for button push (action) events 
+	//************************************************** 
+	
+	private class JoeButtonListener implements ActionListener { 
+
+		//---------------------------------------------- 
+		// Updates the appropriate vote counter when a 
+		// button is pushed for one of the candidates. 
+		//---------------------------------------------- 
+	
+		public void actionPerformed(ActionEvent event) 
+		{ 
+			votesForJoe++; 
+			labelJoe.setText("Votes for Joe: " + votesForJoe);
+			if (votesForJoe > votesForSam);
+				{
+					labelWinner.setText("Winning:" + Joe);
+				}
+		} 
+	}
+	
+	private class SamButtonListener implements ActionListener { 
+
+		//---------------------------------------------- 
+		// Updates the appropriate vote counter when a 
+		// button is pushed for one of the candidates. 
+		//---------------------------------------------- 
+	
+		public void actionPerformed(ActionEvent event) 
+		{ 
+			votesForSam++; 
+			labelSam.setText("Votes for Sam: " + votesForSam);
+			if (votesForSam > votesForJoe);
+			{
+				labelWinner.setText("Winner:" + Sam);
+			}
+		} 
+	} 
+} 

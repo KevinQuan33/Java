@@ -1,0 +1,38 @@
+// ************************************************************  
+//   Factorials.java 
+// 
+//   User inputs a non-negative integer
+//   Outputs a factorial
+// 
+// ************************************************************
+
+import java.util.Scanner;
+
+public class Factorials {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scan = new Scanner(System.in);
+		int factorial = -1;
+		while (factorial < 0)
+		{
+			System.out.println("Please enter a non-negative integer");
+			factorial = scan.nextInt();
+		}
+		 System.out.print(factorial + "! is ");
+         
+		int product = 1;
+        while(factorial > 0) 
+        {
+            product *= factorial;
+            factorial--;
+        }
+         System.out.println(product);
+    }
+
+}
+

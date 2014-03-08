@@ -1,0 +1,9 @@
+Guess: A game where a user guesses a number between 1-10 based on a randomly generated integer from the program. 
+       Performs a while loop if the guess is wrong. 
+
+Factorials: User inputs a non-negative number and the program outputs the factorial for that integer.
+
+Shop: User inputs an item, the price, and quantity. The program multiplies the price and quantity then outputs the total price.
+
+VoteCounter: A graphics application with two buttons and tallies the votes when the buttons are pressed.
+             Displays a literal string on who's winning or if they're tied.

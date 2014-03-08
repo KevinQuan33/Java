@@ -1,0 +1,55 @@
+// *************************************************************** 
+//   Shop.java 
+// 
+//   Uses the Item class to create items and add them to a shopping 
+//   cart stored in an ArrayList. 
+// *************************************************************** 
+
+import java.util.ArrayList; 
+import java.util.Scanner; 
+
+public class Shop {    
+	
+	public static void main (String[] args) { 
+		Item item; 
+		String itemName; 
+		double itemPrice; 
+		int quantity;
+		double totalCost = 0;
+
+		ArrayList<Item> product = new ArrayList<Item>();
+		
+		Scanner scan = new Scanner(System.in); 
+
+		String keepShopping = "y";
+		
+		do    
+		{ 
+			System.out.println ("Enter the name of the item: "); 
+			itemName = scan.nextLine(); 
+			System.out.println ("Enter the unit price: "); 
+			itemPrice = scan.nextDouble(); 
+			System.out.println ("Enter the quantity: "); 
+			quantity = scan.nextInt(); 
+			// *** create a new item and add it to the cart 
+			
+			Item list = new Item(itemName, itemPrice, quantity);
+			
+			// *** print the contents of the cart object using println 
+			product.add(list);
+			System.out.println("Items in your cart: " + product);
+			totalCost = totalCost + (list.getPrice() * list.getQuantity() );
+			System.out.println ("Continue shopping (y/n)? "); 
+			keepShopping = scan.nextLine();
+			keepShopping = scan.nextLine();
+		}
+
+		while (keepShopping.equals("y"));
+		{
+
+		}
+
+			System.out.println("Thanks for shopping your total is $" + totalCost);
+		
+	} 
+}
